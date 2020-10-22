@@ -1,11 +1,16 @@
-let rng1 = Math.ceil(Math.random()*83)
-let rng2 = Math.ceil(Math.random()*66)
+
+let rng1 = Math.ceil(Math.random()*18)
+let rng2 = Math.ceil(Math.random()*6)
+let rng3 = Math.ceil(Math.random()*7)
 let fungsi = ['*', '+','-','/']
 let i = Math.random()
+let i2 = Math.random()
 let iFungsi = Math.floor(i*fungsi.length)
 let operator = fungsi[iFungsi]
+let iFungsi2 = Math.floor(i2*fungsi.length)
+let operator2 = fungsi[iFungsi2]
 let counter = 0
-function cariHasil(rng1,rng2,operator){
+function cariHasil(rng1,rng2,rng3,operator,operator2){
     let hasil = 0
     switch(operator){
         case '*':
@@ -19,6 +24,21 @@ function cariHasil(rng1,rng2,operator){
             break;
         case '/':
             hasil = rng1/rng2
+            break;
+    }
+    switch(operator2){
+        case '*':
+            hasil = hasil*rng3
+            break;
+        case '+':
+            hasil = hasil+rng3
+            break;
+        case '-':
+            hasil = hasil-rng3
+            break;
+        case '/':
+            hasil = hasil/rng3
+            break;
     }
     return Number(hasil.toFixed(2))
 }
@@ -52,33 +72,42 @@ function randomJwb(){
 }
 function kasihJawaban(){
     let button = randomJwb()
-    document.getElementById(button).innerText = cariHasil(rng1,rng2,operator)
+    document.getElementById(button).innerText = cariHasil(rng1,rng2,rng3,operator,operator2)
     document.getElementById(button).className = 'btn-benar'
     //document.getElementById(button).onclick = cekJwb()
     
 }
 // console.log(kasihJawaban())
 function keluarSoal(){
-    document.getElementById("soalMath").innerText = `${rng1} ${operator} ${rng2} ?`
+    document.getElementById("soalMath").innerText = `(${rng1} ${operator} ${rng2}) ${operator2} ${rng3}?`
 }
 function kasihJawabanLain(){
-    let jawaban = cariHasil(rng1,rng2,operator)
+    let jawaban = cariHasil(rng1,rng2,rng3,operator,operator2)
     let koma = 0
     if(jawaban != Math.floor(jawaban)){
         koma =2
     }
     for(let j = 1; j < 5; j++ ){
         if(document.getElementById("jwb"+j).innerText != jawaban ) {
-            //console.log('masuk')
             if((Math.random()*100).toFixed() %2 == 0){
-                document.getElementById("jwb"+j).innerText = (jawaban + (Math.random()+0.1)*10).toFixed(koma)
-                document.getElementById("jwb"+j).className = 'btn-salah'
-                //document.getElementById("jwb"+j).onclick = cekJwb('salah')
+                if(jawaban%5 == 0){
+                    document.getElementById("jwb"+j).innerText = (jawaban + (j*10)).toFixed(koma)
+                    document.getElementById("jwb"+j).className = 'btn-salah'
+                }else{
+                    document.getElementById("jwb"+j).innerText = (jawaban + (Math.random()+0.1)*15).toFixed(koma)
+                    document.getElementById("jwb"+j).className = 'btn-salah'
+                }                
             }else{
-                document.getElementById("jwb"+j).innerText = (jawaban - (Math.random()+0.1)*10).toFixed(koma)
-                document.getElementById("jwb"+j).className = 'btn-salah'
-                //document.getElementById("jwb"+j).onclick = cekJwb('salah')
+                if(jawaban%5 == 0){
+                    document.getElementById("jwb"+j).innerText = (jawaban - (j*10)).toFixed(koma)
+                    document.getElementById("jwb"+j).className = 'btn-salah'
+                }else{
+                    document.getElementById("jwb"+j).innerText = (jawaban - (Math.random()+0.1)*10).toFixed(koma)
+                    document.getElementById("jwb"+j).className = 'btn-salah'
+                }
+                
             }
+                            
         }
     }    
    
@@ -92,12 +121,16 @@ function quiz(){
     kasihJawabanLain()
 }
 function quiz2(){
-    rng1 = Math.ceil(Math.random()*83)
-    rng2 = Math.ceil(Math.random()*66)
+    rng1 = Math.ceil(Math.random()*18)
+    rng2 = Math.ceil(Math.random()*6)
+    rng3 = Math.ceil(Math.random()*7)
     fungsi = ['*', '+','-','/']
     i = Math.random()
+    i2 = Math.random()
     iFungsi = Math.floor(i*fungsi.length)
     operator = fungsi[iFungsi]
+    iFungsi2 = Math.floor(i2*fungsi.length)
+    operator2 = fungsi[iFungsi2]
     keluarSoal()
     kasihJawaban()
     kasihJawabanLain()

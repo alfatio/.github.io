@@ -13,8 +13,8 @@
     </div>
     <div class="box-isi-nama" id="formNama">
         <form action="" method="post">
-            <label for="inputNama">NAMA:</label>
-            <input type="text" name="" id="inputNama" placeholder="nama anda"><br>
+            <label for="inputNama">MULAI</label>
+            <!-- <input type="text" name="" id="inputNama" placeholder="nama anda"><br> -->
             <input onclick="showHide(`formNama`); counter = 5; quiz(); showHide2(`benarSalah`);" type="button" value="Mulai">
         </form>
     </div>
@@ -27,6 +27,7 @@
         <button id="jwb4" class="btn-jwb" onclick="cekJwb('jwb4')">NaN</button>
         <button id="btnNext" inputmode="reset" class="btn-jwb" style= "display: block;" onclick="quiz2()">next</button>
     </div>
+    
 
     <div id="benarSalah" class="hidden">
         <p>BENAR</p><p id="countBenar">0</p><br>

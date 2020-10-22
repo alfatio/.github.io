@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATH QUIZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div>
+        <h1 class="text-center">MATH QUIZ</h1>
+    </div>
+    <div class="box-isi-nama" id="formNama">
+        <form action="" method="post">
+            <label for="inputNama">NAMA:</label>
+            <input type="text" name="" id="inputNama" placeholder="nama anda"><br>
+            <input onclick="showHide(`formNama`); counter = 5; quiz(); showHide2(`benarSalah`);" type="button" value="Mulai">
+        </form>
+    </div>
+    <div class="box-ditengah center" id="boxSoal">
+        <p class="text-center" style="font-size: 40px;" id="soalMath">soal</p>
+    
+        <button id="jwb1" class="btn-jwb" onclick="cekJwb('jwb1')">NaN</button>
+        <button id="jwb2" class="btn-jwb" onclick="cekJwb('jwb2')">NaN</button><br>
+        <button id="jwb3" class="btn-jwb" onclick="cekJwb('jwb3')">NaN</button>
+        <button id="jwb4" class="btn-jwb" onclick="cekJwb('jwb4')">NaN</button>
+        <button id="btnNext" inputmode="reset" class="btn-jwb" style= "display: block;" onclick="quiz2()">next</button>
+    </div>
+
+    <div id="benarSalah" class="hidden">
+        <p>BENAR</p><p id="countBenar">0</p><br>
+        <p>SALAH</p><p id="countSalah">0</p>
+    </div>
+
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

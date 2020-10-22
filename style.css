@@ -1,0 +1,77 @@
+body{
+    background-image: url("https://polar-latitudes.com/app/uploads/2019/09/polar-latitudes-antarctica-gentoo-penguin-triplets.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Staatliches', cursive;
+}
+h1{
+    color: white;
+    background-color: red;
+    background-size: cover;
+}
+.text-center {
+    text-align: center;
+}
+.center {
+    display: block;
+    margin: auto;
+}
+.box-isi-nama {
+    width: auto;
+    height: auto;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    font-size: 15pt;
+    text-align: center;
+    background-color: lightskyblue;
+  }
+  .box-ditengah{
+    width: 500px;
+    height: 400px;  
+    position: fixed;
+    margin-left:25%;
+    background-color: lime;       
+    min-height: 300px;  
+    min-width: 500px;    
+    border-radius: 20px;
+  }
+  .btn-jwb{
+      width: 160px;
+      height: 60px;
+      position: relative;
+      margin-left: 50px;
+      margin-bottom: 100px;
+      background-color: white;
+      border-radius: 20px;
+      font-size: 20px;
+  }
+  .hidden{
+      display: none;
+  }
+  .btn-salah{
+    width: 160px;
+    height: 60px;
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 20px;
+  }
+  .btn-benar{
+    width: 160px;
+    height: 60px;
+    position: relative;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    background-color: white;
+    border-radius: 20px;
+    font-size: 20px;
+  }
+  .papan-skor{
+      position: sticky;
+     
+  }
+  
